@@ -32,3 +32,7 @@ cat /sys/firmware/devicetree/model
 ```
 cat /proc/version
 ```
+- Get the Swapping Memory
+```
+free -h
+```
