@@ -1,5 +1,17 @@
 ### GPIO
-
+- Output
+```python
+import RPi.GPIO as GPIO
+GPIO.setup(pin_number, GPIO.OUT)
+# set initial I/O state
+GPIO.output(pin_number, GPIO.HIGH)
+GPIO.output(pin_number, GPIO.LOW)
+```
+- Input
+```python
+import RPi.GPIO as GPIO
+get_input = GPIO.input(pin_number)
+```
 ### PWM
 
 ### WebServer
