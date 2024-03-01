@@ -12,17 +12,31 @@ GPIO.output(pin_number, GPIO.LOW)
 import RPi.GPIO as GPIO
 get_input = GPIO.input(pin_number)
 ```
-### PWM
+### [PWM](https://sourceforge.net/p/raspberry-gpio-python/wiki/PWM/)
 
 ```python
-from gpiozero as PWMOutput
-led = PWMOutput(pin_number)
-led.value = 1   # LED fully on
-led.value = 0.5 # LED half-birghtness
-led.value = 0   # LED fully off
-# duty_cycle = 0 ~ 100
-led.value = duty_cycle/100.0
+import RPi.GPIO as GPIO
+GPIO.setmode(GPIO.BOARD)
+GPIO.setup(12, GPIO.OUT)
+
+# To create a PWM instance
+p = GPIO.PWM(12, 0.5)
+
+# To start PWM
+# p.start(duty) where duty = 0.0~100.0
+p.start(1)
+
+# To change the frequency
+p.ChangeFrequency(freq) # where freq is the new frequency in Hz
+
+# To change the duty cycle
+p.ChangeDutyCycle(duty)
+
+# To stop PWM
+p.stop()
+GPIO.cleanup()
 ```
+
 
 ### WebServer
 - [PermissionError: [Errno 13] Permission denied](https://stackoverflow.com/questions/38298652/permissionerror-errno-13-permission-denied-flask-run)\
