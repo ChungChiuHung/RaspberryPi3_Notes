@@ -34,7 +34,8 @@ p.ChangeDutyCycle(duty)
 
 # To stop PWM
 p.stop()
-GPIO.cleanup()
+
+# If you wich to restart, modify the PWM freqency each time after involking stop()
 ```
 
 
